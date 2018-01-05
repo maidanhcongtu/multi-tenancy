@@ -9,6 +9,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 
 import com.mhdanh.multitenancy.TenantCreator;
+import com.mhdanh.myflyway.app.TenantSchemaService;
 
 
 @RequestScoped
@@ -19,10 +20,22 @@ public class SchemaResource {
 	@Inject
     private TenantCreator tenants;
 	
+	@Inject
+    private TenantSchemaService migrationService;
+	
 	@POST
     @Path("schema")
     public Response createTenantSchema(@PathParam("company-tenant-id") String companyTenantId) {
             tenants.createTenantForTenantId(companyTenantId);
         	return Response.ok().build();
     }
+	
+	@POST
+    @Path("schema/migrate")
+    public Response createTablesInTenantSchema(@PathParam("company-tenant-id") String companyTenantId) {
+			migrationService.migrate(companyTenantId);
+        	return Response.ok().build();
+    }
+	
+	
 }
