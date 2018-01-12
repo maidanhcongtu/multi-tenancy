@@ -1,0 +1,1 @@
+create table hotel (id  bigserial not null, name varchar(255), location varchar(255), primary key (id));
