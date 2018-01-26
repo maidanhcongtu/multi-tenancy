@@ -1,0 +1,1 @@
+alter table public.city add column name varchar(255);

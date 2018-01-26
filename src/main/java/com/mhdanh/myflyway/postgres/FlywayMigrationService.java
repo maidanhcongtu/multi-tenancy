@@ -28,6 +28,7 @@ public class FlywayMigrationService implements MigrationService {
         flyway.setSchemas(tenantId);
         flyway.setSkipDefaultCallbacks(true);
         flyway.setIgnoreFutureMigrations(false);
+        flyway.setBaselineOnMigrate(true);
         flyway.setCallbacks(new SetRoleToTenantFlywayCallback(tenantId));
         return flyway;
     }

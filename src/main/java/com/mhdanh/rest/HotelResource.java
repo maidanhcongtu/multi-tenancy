@@ -1,6 +1,9 @@
 package com.mhdanh.rest;
 
+import java.util.List;
+
 import javax.inject.Inject;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
@@ -16,6 +19,11 @@ public class HotelResource {
 	@POST
 	public Hotel save(Hotel hotel) {
 		return hotelService.save(hotel);
+	}
+	
+	@GET
+	public List<Hotel> getAll() {
+		return hotelService.getAll();
 	}
 	
 }

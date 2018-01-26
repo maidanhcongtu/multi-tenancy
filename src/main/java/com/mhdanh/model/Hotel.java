@@ -7,6 +7,8 @@ public class Hotel {
 
 	private String location;
 
+	private City city;
+
 	public long getId() {
 		return id;
 	}
@@ -29,6 +31,14 @@ public class Hotel {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public City getCity() {
+		return city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
 	}
 
 }

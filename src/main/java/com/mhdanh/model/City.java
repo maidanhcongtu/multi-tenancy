@@ -1,21 +1,9 @@
-package com.mhdanh.entity;
+package com.mhdanh.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "city", schema = "public")
-public class CityEntity {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class City {
+	
 	private long id;
-
 	private String code;
-
 	private String name;
 
 	public long getId() {

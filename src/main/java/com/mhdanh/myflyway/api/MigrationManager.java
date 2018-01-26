@@ -59,7 +59,7 @@ public class MigrationManager {
             flyway.setSchemas(this.schemaNames.stream().toArray(String[]::new));
         }
         flyway.setBaselineOnMigrate(this.ignoreBaselineIfTablesPresent);
-        flyway.setIgnoreFutureMigrations(true);
+        flyway.setIgnoreFutureMigrations(false);
         for (MigrationInfo migrationInfo : flyway.info().pending()) {
             LOG.log(Level.INFO, "migrate task: {0} : {1} from file: {2}", new Object[]{migrationInfo.getVersion(), migrationInfo.getDescription(), migrationInfo.getScript()});
         }

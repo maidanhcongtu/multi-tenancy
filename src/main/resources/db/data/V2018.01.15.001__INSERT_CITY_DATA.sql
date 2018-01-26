@@ -1,0 +1,1 @@
+insert into city(id, code, name) values('1', 'HCM', 'Ho Chi Minh');
